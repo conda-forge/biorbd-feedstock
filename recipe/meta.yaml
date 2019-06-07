@@ -23,9 +23,10 @@ requirements:
     - cmake
     - make  # [unix]
   host:
+    - libblas
+    - libcblas
     - boost-cpp
     - eigen
-    - lapack
     - rbdl
     - dlib-cpp
     - python
@@ -33,7 +34,6 @@ requirements:
     - swig
   run:
     - boost-cpp
-    - lapack
     - eigen
     - rbdl
     - dlib-cpp
