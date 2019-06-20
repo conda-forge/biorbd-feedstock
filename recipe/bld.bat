@@ -2,7 +2,7 @@ mkdir build
 cd build
 
 cmake ../^
-    -G"%CMAKE_GENERATOR%"^
+    -G"%NMake Makefiles%"^
     -DCMAKE_BUILD_TYPE=Release^
     -DCMAKE_INSTALL_PREFIX="%PREFIX%"^
     -DBUILD_SHARED_LIBS=OFF^
