@@ -7,6 +7,8 @@ cmake ../ \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DBUILD_EXAMPLE=OFF \
+      -DMODULE_ACTUATORS=ON \
+      -DMODULE_MUSCLES=ON \
       -DBINDER_PYTHON3=ON \
         -DNUMPY_INCLUDES=$PREFIX/numpy/core/include \
         -DPython_EXECUTABLE=$PREFIX/bin/python \
