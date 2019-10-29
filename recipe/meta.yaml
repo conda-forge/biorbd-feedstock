@@ -10,7 +10,7 @@ source:
   sha256: ab14238dc07ab70acc97b8fa041da90aaae6d142a217f0442fb03a5ba48dda18
   
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   skip: True  # [py<35]
   rpaths:
@@ -32,6 +32,7 @@ requirements:
     - python
     - numpy
     - swig
+    - ipopt
   run:
     - boost-cpp
     - eigen
@@ -39,6 +40,7 @@ requirements:
     - dlib-cpp
     - python
     - numpy
+    - ipopt
 
 test: 
   commands: 
