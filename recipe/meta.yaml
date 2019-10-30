@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: ab14238dc07ab70acc97b8fa041da90aaae6d142a217f0442fb03a5ba48dda18
+  sha256: 716ac369544b0ba911c6b3a4726b8c02ce6d8923e9e7b2853fed5c9fcbb18618
   
 build:
   number: 1
@@ -32,7 +32,6 @@ requirements:
     - python
     - numpy
     - swig
-    - ipopt
   run:
     - boost-cpp
     - eigen
@@ -40,7 +39,6 @@ requirements:
     - dlib-cpp
     - python
     - numpy
-    - ipopt
 
 test: 
   commands: 
