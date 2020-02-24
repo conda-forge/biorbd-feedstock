@@ -2,7 +2,7 @@ mkdir build
 cd build
 
 cmake ../^
-    -G"%CMAKE_GENERATOR%"^
+    -GNinja ^
     -DCMAKE_BUILD_TYPE=Release^
     -DCMAKE_INSTALL_PREFIX="%PREFIX%"^
     -DBUILD_SHARED_LIBS=OFF^
@@ -15,6 +15,4 @@ cmake ../^
       -DMatlab_biorbd_INSTALL_DIR="%PREFIX%/MATLAB"
 
 
-cmake --build ./^
-    --config Release^
-    --target install
+ninja install
