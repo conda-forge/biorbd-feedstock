@@ -10,7 +10,7 @@ source:
   sha256: 76b62f918a29d383ca28b8816e6ff15d30bfd0808a55a08174bb7d054e43b737
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   skip: True  # [py<35]
   rpaths:
