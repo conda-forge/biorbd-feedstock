@@ -29,6 +29,7 @@ requirements:
     - eigen
     - rbdl
     - dlib-cpp
+    - tinyxml
     - python
     - numpy
     - swig
