@@ -10,7 +10,7 @@ source:
   sha256: 02502927cc049b8e2a207cd0985f1c059828327fa0a846cdb0d91665d6a091b7
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   skip: True  # [py<35]
   rpaths:
@@ -30,6 +30,7 @@ requirements:
     - rbdl
     - dlib-cpp
     - tinyxml
+    - ipopt  # [not win]
     - python
     - numpy
     - swig
@@ -38,6 +39,7 @@ requirements:
     - eigen
     - rbdl
     - dlib-cpp
+    - ipopt  # [not win]
     - python
     - numpy
 
