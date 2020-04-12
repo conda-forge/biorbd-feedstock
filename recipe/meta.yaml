@@ -23,16 +23,15 @@ requirements:
     - cmake
     - ninja
   host:
-    - casadi
-    - rbdl-casadi
+    - eigen
+    - rbdl
     - tinyxml
     - ipopt  # [not win]
     - python
     - numpy
     - swig
   run:
-    - casadi
-    - rbdl-casadi
+    - rbdl
     - ipopt  # [not win]
     - python
     - numpy
