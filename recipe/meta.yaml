@@ -23,22 +23,16 @@ requirements:
     - cmake
     - ninja
   host:
-    - libblas
-    - libcblas
-    - boost-cpp
     - eigen
     - rbdl
-    - dlib-cpp
     - tinyxml
     - ipopt  # [not win]
     - python
     - numpy
     - swig
   run:
-    - boost-cpp
     - eigen
     - rbdl
-    - dlib-cpp
     - ipopt  # [not win]
     - python
     - numpy
