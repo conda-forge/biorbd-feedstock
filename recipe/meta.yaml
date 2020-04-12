@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  skip: true  # [py<35 or py>37]
+  skip: true  # [py<35]
   rpaths:
     - lib/
     - lib/{{ name }}/
