@@ -17,7 +17,7 @@ build:
     - lib/
     - lib/{{ name }}/
   run_exports:
-    - {{ pin_subpackage('casadi', max_pin='x.x') }}
+    - {{ pin_subpackage('biorbd', max_pin='x.x') }}
 
 requirements:
   build:
@@ -48,7 +48,6 @@ test:
 about:
   home: http://github.com/pyomeca/biorbd
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: 'Biomechanical add-ons to the RigidBody Dynamics Library '
 
