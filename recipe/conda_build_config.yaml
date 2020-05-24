@@ -1,17 +1,18 @@
 backend:
-  - 'casadi'  # [linux or osx and py<38]
+  - 'casadi'  # [linux or osx]
   - 'eigen'
-
-rbdl_variant:
-  - 'rbdl =*=casadi*'  # [linux or osx and py<38]
-  - 'rbdl'
   
 backend_name_in_build:
-  - 'Casadi'  # [linux or osx and py<38]
+  - 'Casadi'  # [linux or osx]
   - 'Eigen3'
+  
+rbdl_variant:
+  - 'rbdl=*=casadi*'  # [linux or osx]
+  - 'rbdl'
   
 zip_keys:
 -
   - backend
+  - backend_name_in_build
   - rbdl_variant
   - backend_name_in_build
