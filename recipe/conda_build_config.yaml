@@ -13,5 +13,7 @@ rbdl_variant:
 zip_keys:
 -
   - backend
-  - backend_name_in_build
   - rbdl_variant
+-
+  - backend
+  - backend_name_in_build
