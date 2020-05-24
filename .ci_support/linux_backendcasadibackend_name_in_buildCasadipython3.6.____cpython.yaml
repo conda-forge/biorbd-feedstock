@@ -1,3 +1,7 @@
+backend:
+- casadi
+backend_name_in_build:
+- Casadi
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -16,3 +20,6 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.6.* *_cpython
+zip_keys:
+- - backend
+  - backend_name_in_build
