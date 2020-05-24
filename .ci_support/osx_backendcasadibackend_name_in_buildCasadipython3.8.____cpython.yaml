@@ -1,5 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+backend:
+- casadi
+backend_name_in_build:
+- Casadi
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -19,4 +23,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.6.* *_cpython
+- 3.8.* *_cpython
+zip_keys:
+- - backend
+  - backend_name_in_build

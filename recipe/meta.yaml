@@ -1,5 +1,6 @@
 {% set name = "biorbd" %}
 {% set version = "1.2.7" %}
+{% set build_num = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -10,30 +11,36 @@ source:
   sha256: bb08e1c43738d28c2756f05cff32a818ccf1c724b21d901de72ba27b0198d1f1
 
 build:
-  number: 0
+  number: {{ build_num }}
   skip: true  # [win and vc<14]
-  skip: true  # [py<35]
+  skip: true  # [py<36]
+  skip: true  # [backend == "casadi" and py>37]
   rpaths:
     - lib/
     - lib/{{ name }}/
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
-
+    - biorbd * {{ backend }}_*
+  string: {{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
+  track_features:
+    - casadi  # [backend == "casadi"]
+    
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
     - ninja
   host:
-    - eigen
-    - rbdl
+    - rbdl =*=casadi*  # [backend == "casadi"]
+    - rbdl  # [backend == "eigen"]
     - tinyxml
     - ipopt  # [not win]
     - python
     - numpy
     - swig
   run:
-    - {{ pin_compatible('rbdl') }}
+    - rbdl =*=casadi*  # [backend == "casadi"]
+    - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
     - python
     - {{ pin_compatible('numpy') }}
