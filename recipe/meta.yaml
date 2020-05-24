@@ -21,7 +21,7 @@ build:
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
     - biorbd * {{ backend }}_*
-  string: {{ python }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
+  string: py{{ py }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
   track_features:
     - casadi  # [backend == "casadi"]
     
