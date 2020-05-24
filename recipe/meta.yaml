@@ -23,7 +23,7 @@ build:
     - biorbd * {{ backend }}_*
   string: {{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
   track_features:
-    - rbdl =*=casadi*  # [backend == "casadi"]
+    - casadi  # [backend == "casadi"]
     
 requirements:
   build:
