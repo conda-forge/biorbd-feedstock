@@ -30,14 +30,14 @@ requirements:
     - cmake
     - ninja
   host:
-    - rbdl =*={{ backend }}*
+    - {{ rbdl_variant }}
     - tinyxml
     - ipopt  # [not win]
     - python
     - numpy
     - swig
   run:
-    - rbdl =*={{ backend }}*
+    - {{ rbdl_variant }}
     - ipopt  # [not win]
     - python
     - {{ pin_compatible('numpy') }}
