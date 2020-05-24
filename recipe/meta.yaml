@@ -30,14 +30,16 @@ requirements:
     - cmake
     - ninja
   host:
-    - {{ rbdl_variant|default("rbdl") }}
+    - rbdl =*=casadi*  # [casadi]
+    - rbdl  # [eigen]
     - tinyxml
     - ipopt  # [not win]
     - python
     - numpy
     - swig
   run:
-    - {{ rbdl_variant|default("rbdl") }}
+    - rbdl =*=casadi*  # [casadi]
+    - rbdl  # [eigen]
     - ipopt  # [not win]
     - python
     - {{ pin_compatible('numpy') }}

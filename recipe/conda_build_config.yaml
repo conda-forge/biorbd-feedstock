@@ -6,14 +6,7 @@ backend_name_in_build:
   - 'Casadi'  # [linux or osx and py<38]
   - 'Eigen3'
   
-rbdl_variant:
-  - 'rbdl=*=casadi*'  # [linux or osx and py<38]
-  - 'rbdl'
-  
 zip_keys:
--
-  - backend
-  - rbdl_variant
 -
   - backend
   - backend_name_in_build
