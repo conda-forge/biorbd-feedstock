@@ -13,7 +13,8 @@ source:
 build:
   number: {{ build_num }}
   skip: true  # [win and vc<14]
-  skip: true  # [py<35]
+  skip: true  # [py<36]
+  skip: true  # [backend == "casadi" and py>37]
   rpaths:
     - lib/
     - lib/{{ name }}/
@@ -22,7 +23,7 @@ build:
     - biorbd * {{ backend }}_*
   string: {{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
   track_features:
-    - casadi  # [backend == "casadi"]
+    - rbdl =*=casadi*  # [backend == "casadi"]
     
 requirements:
   build:
