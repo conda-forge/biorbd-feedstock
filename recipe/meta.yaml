@@ -33,14 +33,11 @@ requirements:
     - rbdl  # [backend == "eigen"]
     - tinyxml
     - ipopt  # [not win]
-    - python
-    - numpy
     - swig
   run:
     - rbdl =*=casadi*  # [backend == "casadi"]
     - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
-    - python
     - {{ pin_compatible('numpy') }}
 
 test:
