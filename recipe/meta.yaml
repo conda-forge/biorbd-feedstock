@@ -37,11 +37,10 @@ requirements:
     - numpy  # [backend == "eigen"]
     - swig
   run:
-    - {{ pin_compatible('rbdl') }}  # [backend == "casadi"]
-    - rbdl  # [backend == "eigen"]
+    - {{ pin_compatible('rbdl') }}
     - ipopt  # [not win]
     - python
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('numpy') }}  # [backend == "eigen"]
 
 test:
   commands:
