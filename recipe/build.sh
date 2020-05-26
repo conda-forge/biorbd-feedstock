@@ -13,7 +13,6 @@ cmake .. \
       -DMODULE_MUSCLES=ON \
       -DBINDER_PYTHON3=ON \
         -DPython3_EXECUTABLE=$PREFIX/bin/python \
-      -DBINDER_MATLAB=OFF \
-        -DMatlab_ezc3d_INSTALL_DIR=$PREFIX/MATLAB
+      -DBINDER_MATLAB=OFF
 
 ninja install
