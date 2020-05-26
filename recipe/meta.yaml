@@ -34,14 +34,14 @@ requirements:
     - tinyxml
     - ipopt  # [not win]
     - python
-    - numpy  # [backen == "eigen"]
+    - numpy  # [backend == "eigen"]
     - swig
   run:
     - {{ pin_compatible('rbdl') }}  # [backend == "casadi"]
     - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
     - python
-    - {{ pin_compatible('numpy') }}  # [backen == "eigen"] 
+    - {{ pin_compatible('numpy') }}
 
 test:
   commands:
