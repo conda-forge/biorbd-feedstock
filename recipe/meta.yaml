@@ -37,7 +37,8 @@ requirements:
     - numpy  # [backend == "eigen"]
     - swig
   run:
-    - {{ pin_compatible('rbdl') }}  # [backend == "casadi"]
+    - {{ pin_compatible('rbdl') }}  # [backend == "casadi" and not osx]
+    - rbdl =*=casadi*   # [backend == "casadi" and osx]
     - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
     - python
