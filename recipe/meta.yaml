@@ -36,7 +36,8 @@ requirements:
     - python
     - swig
   run:
-    - {{ pin_compatible('rbdl') }}
+    - {{ pin_compatible('rbdl') }}  # [backend == "casadi"]
+    - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
     - python
     - {{ pin_compatible('numpy') }}
