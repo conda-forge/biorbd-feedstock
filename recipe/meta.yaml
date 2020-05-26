@@ -1,6 +1,6 @@
 {% set name = "biorbd" %}
 {% set version = "1.2.8" %}
-{% set build_num = 0 %}
+{% set build_num = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,6 @@ source:
 build:
   number: {{ build_num }}
   skip: true  # [win and vc<14]
-  skip: true  # [py<36]
-  skip: true  # [backend == "casadi" and py>37]
   rpaths:
     - lib/
     - lib/{{ name }}/
@@ -31,19 +29,20 @@ requirements:
     - cmake
     - ninja
   host:
-    - rbdl =*=casadi*  # [backend == "casadi"]
+    - rbdl =*=*casadi*  # [backend == "casadi"]
     - rbdl  # [backend == "eigen"]
     - tinyxml
     - ipopt  # [not win]
     - python
-    - numpy
+    - numpy  # [backend == "eigen"]
     - swig
   run:
-    - rbdl =*=casadi*  # [backend == "casadi"]
+    - {{ pin_compatible('rbdl') }}  # [backend == "casadi" and not osx]
+    - rbdl =*=casadi*   # [backend == "casadi" and osx]
     - rbdl  # [backend == "eigen"]
     - ipopt  # [not win]
     - python
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('numpy') }}  # [backend == "eigen"]
 
 test:
   commands:

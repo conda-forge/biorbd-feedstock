@@ -12,8 +12,7 @@ cmake ../^
     -DMODULE_MUSCLES=ON^
     -DBINDER_PYTHON3=ON^
       -DPython3_EXECUTABLE="%PREFIX%/python.exe"^
-   	-DBINDER_MATLAB=OFF^
-      -DMatlab_biorbd_INSTALL_DIR="%PREFIX%/MATLAB"
+   	-DBINDER_MATLAB=OFF
 
 
 ninja install
