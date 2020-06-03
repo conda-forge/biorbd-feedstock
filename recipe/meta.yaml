@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.2.8" %}
+{% set version = "1.2.9" %}
 {% set build_num = 1 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: 570202a6277a211503d4ee4b80bf290eedddd5287396adc67344a7efd2c0dfa4
+  sha256: b53684d86e90ecfde47229d4ed95fc83e34bdc22bc1504e86af04a10f7a83efe
 
 build:
   number: {{ build_num }}
@@ -22,7 +22,6 @@ build:
   string: py{{ py }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
   track_features:
     - casadi  # [backend == "casadi"]
-    
 requirements:
   build:
     - {{ compiler('cxx') }}
