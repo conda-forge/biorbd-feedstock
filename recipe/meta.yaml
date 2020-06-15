@@ -36,8 +36,7 @@ requirements:
     - numpy  # [backend == "eigen"]
     - swig
   run:
-    - casadi  # [backend == "casadi"]
-    - eigen  # [backend == "eigen"]
+    - {{ backend|default("eigen") }}
     - {{ pin_compatible('rbdl') }}
     - ipopt  # [not win]
     - python
