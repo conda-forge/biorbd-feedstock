@@ -8,34 +8,39 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_backendcasadibackend_name_in_buildCasadipython3.6.____cpython:
-        CONFIG: linux_backendcasadibackend_name_in_buildCasadipython3.6.____cpython
+      linux_64_backendcasadibackend_name_in_buildCasadipython3.6.____cpython:
+        CONFIG: linux_64_backendcasadibackend_name_in_buildCasadipython3.6.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_backendcasadibackend_name_in_buildCasadipython3.7.____cpython:
-        CONFIG: linux_backendcasadibackend_name_in_buildCasadipython3.7.____cpython
+      linux_64_backendcasadibackend_name_in_buildCasadipython3.7.____cpython:
+        CONFIG: linux_64_backendcasadibackend_name_in_buildCasadipython3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_backendcasadibackend_name_in_buildCasadipython3.8.____cpython:
-        CONFIG: linux_backendcasadibackend_name_in_buildCasadipython3.8.____cpython
+      linux_64_backendcasadibackend_name_in_buildCasadipython3.8.____cpython:
+        CONFIG: linux_64_backendcasadibackend_name_in_buildCasadipython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_backendeigenbackend_name_in_buildEigen3python3.6.____cpython:
-        CONFIG: linux_backendeigenbackend_name_in_buildEigen3python3.6.____cpython
+      linux_64_backendeigenbackend_name_in_buildEigen3python3.6.____cpython:
+        CONFIG: linux_64_backendeigenbackend_name_in_buildEigen3python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_backendeigenbackend_name_in_buildEigen3python3.7.____cpython:
-        CONFIG: linux_backendeigenbackend_name_in_buildEigen3python3.7.____cpython
+      linux_64_backendeigenbackend_name_in_buildEigen3python3.7.____cpython:
+        CONFIG: linux_64_backendeigenbackend_name_in_buildEigen3python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_backendeigenbackend_name_in_buildEigen3python3.8.____cpython:
-        CONFIG: linux_backendeigenbackend_name_in_buildEigen3python3.8.____cpython
+      linux_64_backendeigenbackend_name_in_buildEigen3python3.8.____cpython:
+        CONFIG: linux_64_backendeigenbackend_name_in_buildEigen3python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
     maxParallel: 8
   timeoutInMinutes: 360
 
   steps:
+  - script: |
+         rm -rf /opt/ghc
+         df -h
+    displayName: Manage disk space
+
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
@@ -47,6 +52,7 @@ jobs:
   - script: |
         export CI=azure
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+        export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
         .scripts/run_docker_build.sh
     displayName: Run docker build
     env:
