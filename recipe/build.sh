@@ -13,7 +13,6 @@ cmake .. \
       -DMODULE_MUSCLES=ON \
       -DBINDER_PYTHON3=ON \
         -DPython3_EXECUTABLE=$PREFIX/bin/python \
-      -DBINDER_MATLAB=OFF \
-      -MODULE_STATIC_OPTIM=ON
+      -DBINDER_MATLAB=OFF 
 
 ninja install
