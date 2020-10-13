@@ -17,6 +17,9 @@ jobs:
       osx_64_backendcasadibackend_name_in_buildCasadipython3.8.____cpython:
         CONFIG: osx_64_backendcasadibackend_name_in_buildCasadipython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_backendcasadibackend_name_in_buildCasadipython3.9.____cpython:
+        CONFIG: osx_64_backendcasadibackend_name_in_buildCasadipython3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
       osx_64_backendeigenbackend_name_in_buildEigen3python3.6.____cpython:
         CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -26,7 +29,9 @@ jobs:
       osx_64_backendeigenbackend_name_in_buildEigen3python3.8.____cpython:
         CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 8
+      osx_64_backendeigenbackend_name_in_buildEigen3python3.9.____cpython:
+        CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:

@@ -25,3 +25,5 @@ target_platform:
 zip_keys:
 - - backend
   - backend_name_in_build
+- - python
+  - numpy
