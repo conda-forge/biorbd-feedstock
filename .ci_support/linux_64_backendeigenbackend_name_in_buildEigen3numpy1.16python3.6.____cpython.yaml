@@ -1,7 +1,9 @@
 backend:
-- casadi
+- eigen
 backend_name_in_build:
-- Casadi
+- Eigen3
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
