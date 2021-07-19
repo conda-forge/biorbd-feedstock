@@ -29,6 +29,7 @@ requirements:
     - tinyxml
     - ipopt
     - swig
+    - numpy
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
