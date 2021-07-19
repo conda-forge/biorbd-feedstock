@@ -12,7 +12,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [py<38]
+  skip: true  # [py<37]
   rpaths:
     - lib/
     - lib/{{ name }}/
