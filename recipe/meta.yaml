@@ -26,14 +26,14 @@ requirements:
     - rbdl >=3.1.1
     - ipopt
     - tinyxml
-    - numpy
+    - numpy >=1.19
     - swig
     - {{ compiler('cxx') }}
   host:
     - rbdl >=3.1.1
     - ipopt
     - tinyxml
-    - numpy
+    - numpy >=1.19
     - swig
   run:
     - {{ pin_compatible('rbdl') }}
