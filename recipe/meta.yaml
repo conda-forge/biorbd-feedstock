@@ -28,14 +28,12 @@ requirements:
     - rbdl
     - tinyxml
     - ipopt
-    - python
     - numpy
     - swig
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
-    - python
     - {{ pin_compatible('numpy') }} 
     
 test:
