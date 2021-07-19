@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.5.5" %}
+{% set version = "1.6.1" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: cfbc64775d8ce3bff344be6e2305c0af13f9f2537e0dd2a17ae8189ab515a3b9
+  sha256: eb33c560ddd5ee6e7af535aedeb17928776a97946992a6188c2108483c3b7b99
 
 build:
   number: {{ build_num }}
@@ -17,36 +17,34 @@ build:
     - lib/{{ name }}/
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
-    - biorbd * {{ backend }}_*
-  string: py{{ py }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}
-  track_features:
-    - casadi  # [backend == "casadi"]
+  string: py{{ py }}_h{{ PKG_HASH }}_{{ build_num }}
 requirements:
   build:
-    - {{ compiler('cxx') }}
     - cmake
     - ninja
+    - pkgconfig
+    - {{ compiler('cxx') }}
   host:
-    - rbdl =*=*casadi*  # [backend == "casadi"]
-    - rbdl  # [backend == "eigen"]
-    - tinyxml
+    - rbdl >=3.1.1
     - ipopt
-    - python
-    - numpy  # [backend == "eigen"]
+    - tinyxml
+    - numpy >=1.19
     - swig
   run:
-    - {{ backend|default("eigen") }}
     - {{ pin_compatible('rbdl') }}
+    - tinyxml
     - ipopt
-    - python
-    - {{ pin_compatible('numpy') }}  # [backend == "eigen"]
-
+    - {{ pin_compatible('numpy') }} 
+    
 test:
   commands:
-    - test -f $PREFIX/lib/biorbd/libbiorbd$SHLIB_EXT  # [unix]
-    - if not exist %PREFIX%\\Lib\\biorbd*.lib exit 1  # [win]
+    - test -f $PREFIX/lib/biorbd_casadi/libbiorbd_casadi$SHLIB_EXT  # [unix]
+    - test -f $PREFIX/lib/biorbd_eigen/libbiorbd_eigen$SHLIB_EXT  # [unix]
+    - if not exist %PREFIX%\\Lib\\biorbd_casadi*.lib exit 1  # [win]
+    - if not exist %PREFIX%\\Lib\\biorbd_eigen*.lib exit 1  # [win]
   imports:
     - biorbd
+    - biorbd_casadi
 
 about:
   home: http://github.com/pyomeca/biorbd

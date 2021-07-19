@@ -8,29 +8,8 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.6.____cpython:
-        CONFIG: osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.6.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.7.____cpython:
-        CONFIG: osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.8.____cpython:
-        CONFIG: osx_64_backendcasadibackend_name_in_buildCasadinumpy1.17python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendcasadibackend_name_in_buildCasadinumpy1.19python3.9.____cpython:
-        CONFIG: osx_64_backendcasadibackend_name_in_buildCasadinumpy1.19python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.6.____cpython:
-        CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.6.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.7.____cpython:
-        CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.8.____cpython:
-        CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3numpy1.17python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      osx_64_backendeigenbackend_name_in_buildEigen3numpy1.19python3.9.____cpython:
-        CONFIG: osx_64_backendeigenbackend_name_in_buildEigen3numpy1.19python3.9.____cpython
+      osx_64_:
+        CONFIG: osx_64_
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
