@@ -12,7 +12,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [py<39]
+  skip: true  # [py<38]
   rpaths:
     - lib/
     - lib/{{ name }}/
@@ -29,7 +29,6 @@ requirements:
     - rbdl
     - tinyxml
     - ipopt
-    - numpy
     - swig
   run:
     - {{ pin_compatible('rbdl') }}
