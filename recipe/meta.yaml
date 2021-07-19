@@ -24,6 +24,7 @@ requirements:
     - cmake
     - ninja
     - pkgconfig
+    - numpy
   host:
     - rbdl >=3.1.1
     - tinyxml
