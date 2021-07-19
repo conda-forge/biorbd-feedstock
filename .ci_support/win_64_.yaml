@@ -6,7 +6,5 @@ cxx_compiler:
 - vs2017
 ipopt:
 - '3.14'
-numpy:
-- '1.19'
 target_platform:
 - win-64
