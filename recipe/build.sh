@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Build casadi
 mkdir build_casadi
 cd build_casadi
 
@@ -17,6 +19,8 @@ cmake . .. \
 ninja install
 
 cd ..
+
+# Build Eigen
 mkdir build_eigen
 cd build_eigen
 
