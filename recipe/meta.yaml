@@ -21,7 +21,6 @@ build:
 requirements:
   build:
     - cmake
-    - ninja
     - pkgconfig
     - {{ compiler('cxx') }}
   host:
