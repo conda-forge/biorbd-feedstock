@@ -4,12 +4,6 @@
 mkdir build_casadi
 cd build_casadi
 
-ls $PREFIX/include/rbdl
-echo "coucou"
-ls $PREFIX/include/rbdl-casadi/rbdl
-echo "coucou"
-ls $PREFIX/include/rbdl-casadi/rbdl/CasadiMath
-
 cmake . .. \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_BUILD_TYPE=Release \
