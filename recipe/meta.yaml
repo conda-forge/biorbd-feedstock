@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pariterre/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: 705435a7d75361b143ffcce0a793b8197cdf8b9bcc2988b6db4658fdf864a627
+  sha256: b99ffd9274fa5f5cd376099b219ca89dbacfc872004fa6e346e1fd1360c88cd2
 
 build:
   number: {{ build_num }}
