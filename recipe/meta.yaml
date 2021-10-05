@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.8.4" %}
+{% set version = "1.8.6" %}
 {% set build_num = 1 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pariterre/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: bf697bbc35b661217353c950b93abb65f8548b0dc6c5cbe36b27c0cb12eaf0b8
+  sha256: 705435a7d75361b143ffcce0a793b8197cdf8b9bcc2988b6db4658fdf864a627
 
 build:
   number: {{ build_num }}
