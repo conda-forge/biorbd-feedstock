@@ -24,20 +24,17 @@ requirements:
     - ninja
     - pkgconfig
     - {{ compiler('cxx') }}
-    - python =py
   host:
     - rbdl >=3.1.1
     - ipopt
     - tinyxml
     - numpy >=1.19
     - swig
-    - python =py
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
     - {{ pin_compatible('numpy') }}
-    - python =py
 
 test:
   commands:
