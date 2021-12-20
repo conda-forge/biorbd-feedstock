@@ -17,7 +17,6 @@ build:
     - lib/{{ name }}/
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
-  string: py{{ py }}_h{{ PKG_HASH }}_{{ build_num }}
 requirements:
   build:
     - cmake
@@ -28,12 +27,14 @@ requirements:
     - rbdl >=3.1.1
     - ipopt
     - tinyxml
-    - numpy >=1.19
+    - numpy
+    - python
     - swig
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
+    - python
     - {{ pin_compatible('numpy') }}
 
 test:
