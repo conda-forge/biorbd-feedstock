@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.8.3" %}
+{% set version = "1.8.4" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: 2860c3469807610e899baa741685f42850cd3431391fb498bf4ad09484c1da28
+  sha256: af98a2592e70e35dcc57a21586f2939880a6a553f46be488f070109972ad4fc4
 
 build:
   number: {{ build_num }}
@@ -17,7 +17,7 @@ build:
     - lib/{{ name }}/
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
-  string: py{{ py }}_h{{ PKG_HASH }}_{{ build_num }}
+  skip: true  # [py<38]
 requirements:
   build:
     - cmake
@@ -25,23 +25,25 @@ requirements:
     - pkgconfig
     - {{ compiler('cxx') }}
   host:
-    - rbdl >=3.1.1
+    - rbdl
     - ipopt
     - tinyxml
-    - numpy >=1.19
+    - numpy
+    - python
     - swig
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
+    - python
     - {{ pin_compatible('numpy') }}
 
 test:
   commands:
     - test -f $PREFIX/lib/biorbd_casadi/libbiorbd_casadi$SHLIB_EXT  # [unix]
     - test -f $PREFIX/lib/biorbd_eigen/libbiorbd_eigen$SHLIB_EXT  # [unix]
-    - if not exist %PREFIX%\\Lib\\biorbd_casadi*.lib exit 1  # [win]
-    - if not exist %PREFIX%\\Lib\\biorbd_eigen*.lib exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\Lib\\biorbd_casadi*.lib exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\Lib\\biorbd_eigen*.lib exit 1  # [win]
   imports:
     - biorbd
     - biorbd_casadi
