@@ -24,7 +24,7 @@ requirements:
     - pkgconfig
     - {{ compiler('cxx') }}
   host:
-    - rbdl >=3.1.1
+    - rbdl
     - ipopt
     - tinyxml
     - numpy
