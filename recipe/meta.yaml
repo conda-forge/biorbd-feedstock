@@ -17,6 +17,7 @@ build:
     - lib/{{ name }}/
   run_exports:
     - {{ pin_subpackage('biorbd', max_pin='x.x') }}
+  skip: true  # [py<38]
 requirements:
   build:
     - cmake
