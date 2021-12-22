@@ -42,8 +42,8 @@ test:
   commands:
     - test -f $PREFIX/lib/biorbd_casadi/libbiorbd_casadi$SHLIB_EXT  # [unix]
     - test -f $PREFIX/lib/biorbd_eigen/libbiorbd_eigen$SHLIB_EXT  # [unix]
-    - if not exist %PREFIX%\\Lib\\biorbd_casadi*.lib exit 1  # [win]
-    - if not exist %PREFIX%\\Lib\\biorbd_eigen*.lib exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\Lib\\biorbd_casadi*.lib exit 1  # [win]
+    - if not exist %LIBRARY_PREFIX%\\Lib\\biorbd_eigen*.lib exit 1  # [win]
   imports:
     - biorbd
     - biorbd_casadi
