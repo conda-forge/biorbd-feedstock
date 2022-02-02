@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: b921f7c2f4c8410256ad0aa8c394756256ef1eecf7f4ea543082857bc8f47a6c
+  url: https://github.com/pariterre/biorbd/archive/refs/heads/master.zip
+  sha256: 3dd786c20b5ae178a5c81fc0699a4f537bfb0fac6b6cfd2eaa47dd77f60b88f8
 
 build:
   number: {{ build_num }}
