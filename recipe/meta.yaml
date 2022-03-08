@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.8.4" %}
+{% set version = "1.8.7" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: af98a2592e70e35dcc57a21586f2939880a6a553f46be488f070109972ad4fc4
+  sha256: b921f7c2f4c8410256ad0aa8c394756256ef1eecf7f4ea543082857bc8f47a6c
 
 build:
   number: {{ build_num }}
