@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pariterre/biorbd/archive/master.zip
-  sha256: e46aadd8a42777ebaf0479fcaa4d924275572122552d7c588c1d23c324975e81
+  sha256: 742be620d3f2c65a863a4511c45f2b80dbe550ef581d00dc7e6e950961808078
 
 build:
   number: {{ build_num }}
