@@ -10,7 +10,7 @@ source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
   sha256: b921f7c2f4c8410256ad0aa8c394756256ef1eecf7f4ea543082857bc8f47a6c
   patches:
-    - 184_to_187.patch
+    - VS2019.patch
     
 build:
   number: {{ build_num }}
