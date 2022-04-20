@@ -1,47 +1,47 @@
 diff --git a/example/CMakeLists.txt b/example/CMakeLists.txt
-index fe6c2a77..75499316 100644
+index 75499316..fe6c2a77 100644
 --- a/example/CMakeLists.txt
 +++ b/example/CMakeLists.txt
 @@ -27,7 +27,7 @@ if (APPLE)
  elseif (UNIX)
      string(CONCAT ${MASTER_PROJECT_NAME}_LIB_NAME "lib" ${${MASTER_PROJECT_NAME}_LIB_NAME} ".so")
  elseif(_WIN32)
--    message(FATAL_ERROR "Examples are not implemented for Windows")
-+    message("TO BE TESTED")
+-    message("TO BE TESTED")
++    message(FATAL_ERROR "Examples are not implemented for Windows")
      string(CONCAT ${MASTER_PROJECT_NAME}_LIB_NAME ${${MASTER_PROJECT_NAME}_LIB_NAME} ".dll")
  endif()
  set(${MASTER_PROJECT_NAME}_LIBRARY ${CMAKE_BINARY_DIR}/${${MASTER_PROJECT_NAME}_LIB_NAME})
 diff --git a/include/biorbdConfig.h.in b/include/biorbdConfig.h.in
-index 3003bd7c..4998039f 100644
+index 4998039f..3003bd7c 100644
 --- a/include/biorbdConfig.h.in
 +++ b/include/biorbdConfig.h.in
-@@ -12,10 +12,6 @@
+@@ -12,6 +12,10 @@
  //#  define BIORBD_API
  //#endif
  
--#ifdef _WIN32
--#define _ENABLE_EXTENDED_ALIGNED_STORAGE
--#endif
--
++#ifdef _WIN32
++#define _ENABLE_EXTENDED_ALIGNED_STORAGE
++#endif
++
  #define BIORBD_API
  #cmakedefine IPOPT_FOUND
  
 diff --git a/src/RigidBody/KalmanRecons.cpp b/src/RigidBody/KalmanRecons.cpp
-index b3e402d2..c9849570 100755
+index c9849570..b3e402d2 100755
 --- a/src/RigidBody/KalmanRecons.cpp
 +++ b/src/RigidBody/KalmanRecons.cpp
-@@ -32,13 +32,7 @@ void biorbd::rigidbody::KalmanRecons::iteration(
+@@ -32,7 +32,13 @@ void biorbd::rigidbody::KalmanRecons::iteration(
      biorbd::utils::Matrix Pkm(m_A * m_Pp * m_A.transpose() + m_Q);
  
      // Correction
--#ifdef _WIN32
--	// For some reason windows fails to compile the next line directly...
--    Eigen::MatrixXd InvTp_windowsTp((Hessian * Pkm * Hessian.transpose() + m_R).inverse());
--	biorbd::utils::Matrix InvTp(InvTp_windowsTp);
--#else
--	biorbd::utils::Matrix InvTp((Hessian * Pkm * Hessian.transpose() + m_R).inverse());
--#endif
-+    biorbd::utils::Matrix InvTp((Hessian*Pkm*Hessian.transpose() + m_R).inverse());
+-    biorbd::utils::Matrix InvTp((Hessian*Pkm*Hessian.transpose() + m_R).inverse());
++#ifdef _WIN32
++	// For some reason windows fails to compile the next line directly...
++    Eigen::MatrixXd InvTp_windowsTp((Hessian * Pkm * Hessian.transpose() + m_R).inverse());
++	biorbd::utils::Matrix InvTp(InvTp_windowsTp);
++#else
++	biorbd::utils::Matrix InvTp((Hessian * Pkm * Hessian.transpose() + m_R).inverse());
++#endif
      manageOcclusionDuringIteration(InvTp, measure, occlusion);
      biorbd::utils::Matrix K(Pkm*Hessian.transpose() * InvTp); // Gain
  
