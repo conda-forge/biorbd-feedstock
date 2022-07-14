@@ -32,11 +32,13 @@ requirements:
     - numpy
     - python
     - swig
+    - scipy
   run:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
     - python
+    - scipy
     - {{ pin_compatible('numpy') }}
 
 test:
