@@ -26,7 +26,6 @@ requirements:
     - {{ pin_compatible('rbdl') }}
     - tinyxml
     - ipopt
-    - python
     - swig
     - {{ pin_compatible('numpy') }}
     - {{ compiler('cxx') }}
