@@ -11,7 +11,7 @@ cmake ../^
     -DMODULE_MUSCLES=ON^
     -DBINDER_PYTHON3=ON^
       -DPYTHON_EXECUTABLE="%PREFIX%/python.exe"^
-   	-DBINDER_MATLAB=OFF^
+   	-DBINDER_MATLAB=OFF
 ninja install
 
 cd ..
