@@ -10,7 +10,8 @@ cmake ../^
     -DMODULE_ACTUATORS=ON^
     -DMODULE_MUSCLES=ON^
     -DBINDER_PYTHON3=ON^
-   	-DBINDER_MATLAB=OFF
+      -DPython3_EXECUTABLE=%LIBRARY_PREFIX%/python^
+   	-DBINDER_MATLAB=OFF^
 ninja install
 
 cd ..
@@ -25,5 +26,6 @@ cmake ../^
     -DMODULE_ACTUATORS=ON^
     -DMODULE_MUSCLES=ON^
     -DBINDER_PYTHON3=ON^
+      -DPython3_EXECUTABLE=%LIBRARY_PREFIX%/python^
    	-DBINDER_MATLAB=OFF
 ninja install
