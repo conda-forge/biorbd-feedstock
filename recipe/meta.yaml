@@ -1,6 +1,6 @@
 {% set name = "biorbd" %}
 {% set version = "1.9.9" %}
-{% set build_num = 2 %}
+{% set build_num = 3 %}
 
 package:
   name: {{ name|lower }}
