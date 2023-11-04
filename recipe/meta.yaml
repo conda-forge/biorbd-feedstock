@@ -1,6 +1,6 @@
 {% set name = "biorbd" %}
-{% set version = "1.10.0" %}
-{% set build_num = 3 %}
+{% set version = "1.10.1" %}
+{% set build_num = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: bbf9752e276eb595db32117f2084aa6188050214d78a03cb36060983a9944041
+  sha256: 309ddf021382cd5d1c7e35207a540a9664149c8a0d419bfcbf9c2ef871e79321
 
 build:
   number: {{ build_num }}
