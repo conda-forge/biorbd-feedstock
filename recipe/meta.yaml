@@ -32,6 +32,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - ninja
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - numpy
