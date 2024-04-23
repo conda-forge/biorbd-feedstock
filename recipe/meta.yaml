@@ -24,6 +24,8 @@ requirements:
     - cmake
     - swig
     - pkgconfig
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
@@ -36,10 +38,14 @@ requirements:
   host:
     - python
     - numpy
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
   run:
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
