@@ -24,6 +24,8 @@ requirements:
     - cmake
     - swig
     - pkgconfig
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
@@ -32,13 +34,18 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - ninja
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - numpy
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
   run:
+    - casadi
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
