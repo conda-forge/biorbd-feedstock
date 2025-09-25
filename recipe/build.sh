@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Compiling biorbd..."
-echo "PREFIX=$PREFIX"
+echo "PREFIX="$PREFIX
 
 # Build casadi
 echo "... with CasADi backend"
