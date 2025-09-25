@@ -8,7 +8,7 @@ mkdir build_casadi
 cd build_casadi
 
 cmake .. \
-  -GNinja
+  -GNinja \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DCMAKE_BUILD_TYPE=Release \
@@ -26,7 +26,7 @@ mkdir build_eigen
 cd build_eigen
 
 cmake .. \
-  -GNinja
+  -GNinja \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_PREFIX_PATH=$PREFIX \
   -DCMAKE_BUILD_TYPE=Release \
