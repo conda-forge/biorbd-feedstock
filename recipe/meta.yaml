@@ -25,7 +25,7 @@ requirements:
     - swig <4.4.0
     - pkgconfig
     - casadi
-    - eigen
+    - eigen <5
     - rbdl
     - tinyxml
     - ipopt
@@ -39,13 +39,13 @@ requirements:
     - python
     - numpy
     - casadi
-    - eigen
+    - eigen <5
     - rbdl
     - tinyxml
     - ipopt
   run:
     - casadi
-    - eigen
+    - eigen <5
     - rbdl
     - tinyxml
     - ipopt
