@@ -1,5 +1,5 @@
 {% set name = "biorbd" %}
-{% set version = "1.12.4" %}
+{% set version = "1.12.5" %}
 {% set build_num = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz
-  sha256: 97a9a65dde3444129cfdd776297b7c339b2c7043941a0e92f33e32f497309e65
+  sha256: aad8e914951bfc5ed5af96c7ef15b02c0c714d1c3c9bc5a714bf12f79a14a69b
 
 build:
   number: {{ build_num }}
@@ -25,7 +25,7 @@ requirements:
     - swig <4.4.0
     - pkgconfig
     - casadi
-    - eigen <5
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
@@ -39,13 +39,13 @@ requirements:
     - python
     - numpy
     - casadi
-    - eigen <5
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
   run:
     - casadi
-    - eigen <5
+    - eigen
     - rbdl
     - tinyxml
     - ipopt
